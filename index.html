@@ -1,0 +1,525 @@
+
+
+Index · HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daksh Chawla — I.T. Analyst</title>
+<meta name="description" content="Portfolio of Daksh Chawla, I.T. Analyst specializing in Power Platform, MS Dynamics 365, and process automation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#E7ECEF;
+    --panel:#FFFFFF;
+    --panel-2:#F1F4F6;
+    --ink:#10181F;
+    --ink-soft:#4B5A64;
+    --line:#C7D1D6;
+    --signal:#1B6FA8;
+    --signal-dim:#DCE9F1;
+    --diff:#1F8A5F;
+    --diff-dim:#E1F1E8;
+    --amber:#C97C1F;
+    --amber-dim:#F6E7D2;
+    --radius:10px;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+ 
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--signal); color:#fff;}
+ 
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible, .navlink:focus-visible{
+    outline:2px solid var(--signal);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+ 
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+ 
+  /* ---------- Status bar ---------- */
+  .statusbar{
+    position:sticky; top:0; z-index:50;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.02em;
+    border-bottom:1px solid #000;
+  }
+  .statusbar-inner{
+    max-width:1180px; margin:0 auto;
+    display:flex; align-items:center; gap:18px;
+    padding:8px 24px;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+  .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:#39D98A; display:inline-block; margin-right:6px;
+    box-shadow:0 0 0 3px rgba(57,217,138,.18);
+  }
+  .statusbar .sep{opacity:.35;}
+ 
+  /* ---------- Layout shell ---------- */
+  .shell{
+    max-width:1180px; margin:0 auto;
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:0;
+  }
+  @media (max-width:860px){
+    .shell{grid-template-columns:1fr;}
+  }
+ 
+  /* ---------- Side console nav ---------- */
+  .console-nav{
+    position:sticky; top:37px; align-self:start;
+    padding:40px 8px 40px 24px;
+    font-family:var(--mono);
+    font-size:13px;
+  }
+  @media (max-width:860px){
+    .console-nav{position:static; padding:24px 24px 0; display:flex; gap:4px; overflow-x:auto;}
+  }
+  .console-nav .brand{
+    font-family:var(--display); font-weight:700; font-size:17px;
+    margin-bottom:22px; letter-spacing:-0.01em;
+  }
+  @media (max-width:860px){ .console-nav .brand{display:none;} }
+  .navlink{
+    display:block; text-decoration:none; color:var(--ink-soft);
+    padding:6px 10px; margin-bottom:2px; border-radius:6px;
+    border-left:2px solid transparent;
+    transition:color .15s ease, background .15s ease, border-color .15s ease;
+    white-space:nowrap;
+  }
+  .navlink:hover{ color:var(--ink); background:var(--panel-2); }
+  .navlink.active{ color:var(--signal); border-left-color:var(--signal); background:var(--signal-dim); }
+  .navlink .idx{ opacity:.5; margin-right:6px; }
+ 
+  /* ---------- Main column ---------- */
+  main{ padding:40px 24px 100px; min-width:0; }
+  section{ margin-bottom:64px; scroll-margin-top:56px; }
+ 
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; color:var(--ink-soft);
+    text-transform:uppercase; letter-spacing:.12em;
+    display:flex; align-items:center; gap:10px; margin-bottom:14px;
+  }
+  .eyebrow::after{ content:""; flex:1; height:1px; background:var(--line); }
+ 
+  h1,h2,h3{ font-family:var(--display); margin:0 0 12px; letter-spacing:-0.01em; }
+  h2{ font-size:26px; }
+ 
+  /* ---------- Hero ---------- */
+  .hero{ margin-bottom:56px; }
+  .term{
+    background:var(--ink); color:#DCE7EC;
+    border-radius:var(--radius);
+    font-family:var(--mono); font-size:14px;
+    overflow:hidden;
+    box-shadow:0 1px 0 rgba(0,0,0,.05);
+  }
+  .term-bar{
+    display:flex; align-items:center; gap:8px;
+    padding:10px 14px; background:#0A1116; border-bottom:1px solid #1c262c;
+  }
+  .term-bar span{ width:10px; height:10px; border-radius:50%; display:inline-block; background:#3a444b; }
+  .term-title{ margin-left:8px; color:#6d7a82; font-size:12px; }
+  .term-body{ padding:20px 22px 26px; min-height:150px; }
+  .term-body .line{ margin:0 0 6px; }
+  .prompt{ color:#39D98A; }
+  .caret{ display:inline-block; width:8px; height:15px; background:#DCE7EC; margin-left:2px; vertical-align:-2px; animation:blink 1s steps(1) infinite; }
+  @keyframes blink{ 50%{opacity:0;} }
+ 
+  .hero-meta{
+    display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;
+  }
+  .chip{
+    font-family:var(--mono); font-size:12px;
+    background:var(--panel); border:1px solid var(--line);
+    padding:6px 12px; border-radius:100px;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .chip a{ text-decoration:none; }
+  .chip a:hover{ color:var(--signal); }
+ 
+  /* ---------- Panels ---------- */
+  .panel{
+    background:var(--panel); border:1px solid var(--line);
+    border-radius:var(--radius); padding:24px 26px;
+  }
+  .readme-tag{
+    font-family:var(--mono); font-size:11px; color:var(--ink-soft);
+    background:var(--panel-2); border:1px solid var(--line);
+    display:inline-block; padding:3px 8px; border-radius:5px; margin-bottom:14px;
+  }
+  .panel p{ margin:0; color:var(--ink); max-width:66ch; }
+ 
+  /* ---------- Skills modules ---------- */
+  .modgrid{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(210px,1fr));
+    gap:12px;
+  }
+  .mod{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 18px;
+  }
+  .mod h3{ font-size:12px; font-family:var(--mono); text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); margin-bottom:10px; }
+  .mod ul{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px; }
+  .mod li{
+    font-size:13px; font-family:var(--body); font-weight:500;
+    background:var(--panel-2); padding:5px 10px; border-radius:6px;
+    display:flex; align-items:center; gap:6px;
+  }
+  .mod li::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--diff); flex:none; }
+ 
+  /* ---------- Deploy log (experience) ---------- */
+  .log{ border-left:2px solid var(--line); margin-left:6px; padding-left:26px; }
+  .entry{ position:relative; margin-bottom:34px; }
+  .entry:last-child{ margin-bottom:0; }
+  .entry::before{
+    content:""; position:absolute; left:-33px; top:4px;
+    width:11px; height:11px; border-radius:50%;
+    background:var(--paper); border:2px solid var(--signal);
+  }
+  .entry-head{
+    font-family:var(--mono); font-size:12px; color:var(--ink-soft);
+    display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; margin-bottom:6px;
+  }
+  .entry-head .commit{ color:var(--signal); font-weight:600; }
+  .entry h3{ font-size:18px; margin-bottom:2px; }
+  .entry .org{ color:var(--ink-soft); font-size:14px; margin-bottom:10px; }
+  .entry ul{ margin:0; padding-left:18px; }
+  .entry li{ margin-bottom:8px; }
+  .diff{
+    font-family:var(--mono); font-weight:600;
+    background:var(--diff-dim); color:var(--diff);
+    padding:1px 6px; border-radius:4px; white-space:nowrap;
+  }
+ 
+  /* ---------- Projects ---------- */
+  .cardgrid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:14px; }
+  .card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:20px; display:flex; flex-direction:column; gap:8px;
+  }
+  .card .tag{ font-family:var(--mono); font-size:11px; color:var(--signal); text-transform:uppercase; letter-spacing:.06em; }
+  .card h3{ font-size:16px; margin-bottom:0; }
+ 
+  /* ---------- Education / certs ---------- */
+  .twocol{ display:grid; grid-template-columns:1.1fr 1.4fr; gap:16px; }
+  @media (max-width:700px){ .twocol{ grid-template-columns:1fr; } }
+  .badge-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  .badge-list li{
+    display:flex; gap:10px; align-items:flex-start;
+    font-size:14px; background:var(--panel); border:1px solid var(--line);
+    padding:10px 14px; border-radius:8px;
+  }
+  .badge-list li .mark{ color:var(--amber); font-family:var(--mono); font-weight:600; flex:none; }
+ 
+  /* ---------- Contact / footer ---------- */
+  .contact-panel{
+    background:var(--ink); color:var(--paper); border-radius:var(--radius);
+    padding:34px 30px;
+  }
+  .contact-panel .eyebrow{ color:#8DA3AD; }
+  .contact-panel .eyebrow::after{ background:#2A3840; }
+  .contact-panel h2{ color:#fff; }
+  .contact-grid{ display:flex; flex-wrap:wrap; gap:12px; margin-top:16px; }
+  .contact-item{
+    font-family:var(--mono); font-size:13px;
+    border:1px solid #2A3840; border-radius:8px; padding:10px 14px;
+    text-decoration:none; color:#DCE7EC;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .contact-item:hover{ border-color:var(--signal); background:#141C22; }
+  footer{
+    text-align:center; font-family:var(--mono); font-size:11px;
+    color:var(--ink-soft); padding:28px 24px 40px;
+  }
+</style>
+</head>
+<body>
+ 
+<div class="statusbar">
+  <div class="statusbar-inner">
+    <span><span class="dot"></span>PROCESS: it_analyst.exe — RUNNING</span>
+    <span class="sep">//</span>
+    <span>UPTIME: 5+ yrs</span>
+    <span class="sep">//</span>
+    <span>STACK: Power Platform · Dynamics 365 · RPA · React/TS</span>
+    <span class="sep">//</span>
+    <span>LOCATION: Greater Noida, IN</span>
+  </div>
+</div>
+ 
+<div class="shell">
+  <nav class="console-nav" aria-label="Section navigation">
+    <div class="brand">DC_</div>
+    <a class="navlink" href="#about"><span class="idx">01</span>about</a>
+    <a class="navlink" href="#skills"><span class="idx">02</span>skills</a>
+    <a class="navlink" href="#experience"><span class="idx">03</span>experience</a>
+    <a class="navlink" href="#projects"><span class="idx">04</span>projects</a>
+    <a class="navlink" href="#education"><span class="idx">05</span>education</a>
+    <a class="navlink" href="#contact"><span class="idx">06</span>contact</a>
+  </nav>
+ 
+  <main>
+ 
+    <section class="hero" id="hero">
+      <div class="term">
+        <div class="term-bar">
+          <span style="background:#E5544B"></span>
+          <span style="background:#E5B93F"></span>
+          <span style="background:#3FBF6E"></span>
+          <span class="term-title">daksh@console — boot sequence</span>
+        </div>
+        <div class="term-body" id="termBody" aria-live="polite">
+          <!-- filled by JS -->
+        </div>
+      </div>
+      <div class="hero-meta">
+        <span class="chip">📍 Greater Noida-201306, India</span>
+        <span class="chip"><a href="mailto:dakshchawla98@gmail.com">✉ dakshchawla98@gmail.com</a></span>
+        <span class="chip"><a href="tel:+917530000470">☎ 7530000470</a></span>
+        <span class="chip"><a href="https://www.linkedin.com/in/daksh-chawla-" target="_blank" rel="noopener">in/daksh-chawla</a></span>
+      </div>
+    </section>
+ 
+    <section id="about">
+      <div class="eyebrow">01 / about</div>
+      <div class="panel">
+        <span class="readme-tag">README.md</span>
+        <p>Dynamic and results-driven I.T. Analyst with 5+ years delivering technology solutions across banking and enterprise clients. Deep expertise in Microsoft Dynamics 365, digital accessibility, and automation through chatbots and custom web tooling. Comfortable owning a problem end-to-end — from Power Platform architecture down to the SQL underneath it — with a track record of translating manual, error-prone processes into measurable, monitored systems.</p>
+      </div>
+    </section>
+ 
+    <section id="skills">
+      <div class="eyebrow">02 / skills</div>
+      <div class="modgrid">
+        <div class="mod">
+          <h3>Platform &amp; Low-Code</h3>
+          <ul>
+            <li>Power Platform</li><li>Power Apps</li><li>Power Pages</li><li>MS Dynamics 365</li><li>RPA / UiPath</li>
+          </ul>
+        </div>
+        <div class="mod">
+          <h3>Engineering</h3>
+          <ul>
+            <li>React JS</li><li>TypeScript</li><li>C# Plugins</li><li>Python</li><li>SQL</li>
+          </ul>
+        </div>
+        <div class="mod">
+          <h3>Tooling</h3>
+          <ul>
+            <li>Git</li><li>JIRA</li><li>XRMToolBox</li>
+          </ul>
+        </div>
+        <div class="mod">
+          <h3>Working style</h3>
+          <ul>
+            <li>Problem solving</li><li>Team leadership</li><li>Cross-team collaboration</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+ 
+    <section id="experience">
+      <div class="eyebrow">03 / experience</div>
+      <div class="log">
+ 
+        <div class="entry">
+          <div class="entry-head"><span class="commit">#004</span><span>Sep 2025 — Present</span></div>
+          <h3>I.T. Analyst</h3>
+          <div class="org">Tata Consultancy Services, Noida</div>
+          <ul>
+            <li>Designed and deployed a hybrid Power Apps application for bank advisor examination and performance monitoring — <span class="diff">+40% less manual effort</span></li>
+          </ul>
+        </div>
+ 
+        <div class="entry">
+          <div class="entry-head"><span class="commit">#003</span><span>Oct 2020 — Sep 2025</span></div>
+          <h3>Technology Analyst</h3>
+          <div class="org">Infosys Limited, Jaipur</div>
+          <ul>
+            <li>Developed and modernized MS Dynamics 365 — <span class="diff">+15% user interaction</span>, improving satisfaction and engagement</li>
+            <li>Spearheaded digital accessibility initiatives — <span class="diff">+20% operational efficiency</span>, broadening access to critical applications</li>
+          </ul>
+        </div>
+ 
+        <div class="entry">
+          <div class="entry-head"><span class="commit">#002</span><span>Jun 2018 — Jul 2018</span></div>
+          <h3>System Engineer (Intern)</h3>
+          <div class="org">Ruhcom Enterprise Pvt. Ltd., New Delhi</div>
+          <ul>
+            <li>Engineered a website monitoring system to track user clicks and logs — <span class="diff">+35% data accuracy</span>, <span class="diff">+25% site performance insight</span></li>
+          </ul>
+        </div>
+ 
+      </div>
+    </section>
+ 
+    <section id="projects">
+      <div class="eyebrow">04 / projects</div>
+      <div class="cardgrid">
+        <div class="card">
+          <span class="tag">Financial services</span>
+          <h3>Bank Advisor Examination Module</h3>
+          <p>Investigation and examination module built for Manulife.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Modernization</span>
+          <h3>Report Viewer Migration</h3>
+          <p>Migrated a legacy report viewer to a modernized viewer for Microsoft.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Power Platform</span>
+          <h3>Environment Settings Overhaul</h3>
+          <p>Developed and modernized Power Platform environment settings for Microsoft.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Monitoring</span>
+          <h3>Website Monitoring System</h3>
+          <p>Click and log tracking system built for RUHCOM to power user behavior analysis.</p>
+        </div>
+      </div>
+    </section>
+ 
+    <section id="education">
+      <div class="eyebrow">05 / education &amp; certifications</div>
+      <div class="twocol">
+        <div class="panel">
+          <span class="readme-tag">degree</span>
+          <h3 style="margin-top:12px;">B.Tech, Computer Science &amp; Engineering</h3>
+          <p style="margin-bottom:6px;">Vellore Institute of Technology, Vellore, TN</p>
+          <p style="color:var(--ink-soft); font-size:14px;">Jul 2016 — Jun 2020 · Major in Information Security</p>
+        </div>
+        <div>
+          <ul class="badge-list">
+            <li><span class="mark">✓</span> Infosys Certified MySQL Associate</li>
+            <li><span class="mark">✓</span> Infosys Certified Digital Accessibility Associate</li>
+            <li><span class="mark">✓</span> Infosys Certified Database and SQL Professional</li>
+            <li><span class="mark">✓</span> Infosys Certified UiPath Associate</li>
+            <li><span class="mark">✓</span> IIT Delhi — Advanced Data Scientist with Artificial Intelligence</li>
+            <li><span class="mark">★</span> Insta Award, Infosys — excellence in work</li>
+            <li><span class="mark">★</span> Star Performer Award, TCS — excellence in work</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+ 
+    <section id="contact">
+      <div class="contact-panel">
+        <div class="eyebrow">06 / contact</div>
+        <h2>Let's talk shop.</h2>
+        <p style="color:#B7C6CD; max-width:56ch;">Open to conversations on Power Platform architecture, automation, or your next Dynamics 365 rollout.</p>
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:dakshchawla98@gmail.com">✉ dakshchawla98@gmail.com</a>
+          <a class="contact-item" href="tel:+917530000470">☎ 7530000470</a>
+          <a class="contact-item" href="https://www.linkedin.com/in/daksh-chawla-" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        </div>
+      </div>
+    </section>
+ 
+  </main>
+</div>
+ 
+<footer>Built from résumé data · English / Hindi / Punjabi</footer>
+ 
+<script>
+  // Terminal boot sequence
+  const lines = [
+    { p: '$', t: 'whoami' },
+    { p: '>', t: 'DAKSH CHAWLA — I.T. ANALYST' },
+    { p: '$', t: 'cat mission.txt' },
+    { p: '>', t: 'Modernizing systems through Power Platform, Dynamics 365 & automation.' },
+    { p: '$', t: 'status --uptime' },
+    { p: '>', t: '5+ years · 3 employers · 0 missed deadlines' },
+  ];
+ 
+  const body = document.getElementById('termBody');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ 
+  function renderStatic(){
+    body.innerHTML = lines.map(l =>
+      `<p class="line">${l.p==='$' ? '<span class="prompt">$</span> ' : ''}${l.t}</p>`
+    ).join('');
+  }
+ 
+  if(reduced){
+    renderStatic();
+  } else {
+    let li = 0;
+    function typeLine(){
+      if(li >= lines.length){ return; }
+      const l = lines[li];
+      const el = document.createElement('p');
+      el.className = 'line';
+      if(l.p === '$'){
+        const prompt = document.createElement('span');
+        prompt.className = 'prompt';
+        prompt.textContent = '$ ';
+        el.appendChild(prompt);
+      }
+      const textNode = document.createElement('span');
+      el.appendChild(textNode);
+      const caret = document.createElement('span');
+      caret.className = 'caret';
+      el.appendChild(caret);
+      body.appendChild(el);
+ 
+      let ci = 0;
+      const speed = l.p === '$' ? 38 : 14;
+      const timer = setInterval(() => {
+        textNode.textContent += l.t[ci];
+        ci++;
+        if(ci >= l.t.length){
+          clearInterval(timer);
+          caret.remove();
+          li++;
+          setTimeout(typeLine, 220);
+        }
+      }, speed);
+    }
+    typeLine();
+  }
+ 
+  // Scrollspy for nav
+  const navLinks = Array.from(document.querySelectorAll('.navlink'));
+  const sections = navLinks.map(l => document.querySelector(l.getAttribute('href')));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const idx = sections.indexOf(entry.target);
+      if(idx === -1) return;
+      if(entry.isIntersecting){
+        navLinks.forEach(l => l.classList.remove('active'));
+        navLinks[idx].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+  sections.forEach(s => s && io.observe(s));
+</script>
+ 
+</body>
+</html>
+ 
+
